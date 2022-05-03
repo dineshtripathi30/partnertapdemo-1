@@ -12,14 +12,10 @@ spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/live-update: "true"
-        autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 2.6.5
         conventions.apps.tanzu.vmware.com/applied-conventions: |-
-          developer-conventions/live-update-convention
-          developer-conventions/add-source-image-label
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
@@ -28,7 +24,6 @@ spec:
           appliveview-sample/app-live-view-connector
           appliveview-sample/app-live-view-appflavours
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: 256d6964356e2a2eea30d5c8224cdca4b343202c
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -48,7 +43,7 @@ spec:
           value: springdemo
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:93499a634cceb908e39b1ce0bfae197b715ea6b6332e6e88adf3d4421672267b
+        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:df02e923df37cf5a282d17c7694a1b7850d984c5a2c99adc8412188d6954555c
         livenessProbe:
           httpGet:
             path: /livez
