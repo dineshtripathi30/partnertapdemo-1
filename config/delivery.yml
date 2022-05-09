@@ -48,7 +48,7 @@ spec:
           value: springdemo
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:c08bcee5610d072884cf6a81ad0e59bf08e5ff636b02ea8cce70d41e877fee3b
+        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:a8a341eda5b381760e50ec9cf2517727365c3bce80736610e9fce699773b5b40
         livenessProbe:
           httpGet:
             path: /livez
