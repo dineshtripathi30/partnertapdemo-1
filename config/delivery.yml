@@ -28,7 +28,7 @@ spec:
           appliveview-sample/app-live-view-connector
           appliveview-sample/app-live-view-appflavours
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: b0bea9aa6f3bad227d12038c05fd9b318c4ef53e
+        developer.apps.tanzu.vmware.com/image-source-digest: aa794eae81bcb2eeca6c0f874332bca3a2aa259f
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -48,7 +48,7 @@ spec:
           value: springdemo
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:b45ea89d9184e2dd82d1e07faa943a9d47f7ae7a9a2dff7549610deb1bb5ecad
+        image: tanzudemoreg.azurecr.io/tap11/build-service/partnertapdemo-default@sha256:349b47b694cc28469de07c89b65180c6607cff6fade59985fd48429c3442444b
         livenessProbe:
           httpGet:
             path: /livez
